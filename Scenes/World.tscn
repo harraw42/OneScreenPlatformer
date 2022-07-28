@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=2]
+[gd_scene load_steps=103 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/Enjl-Starry Space Background/Enjl-Starry Space Background/preview.png" type="Texture" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://Sprites/strange_door_closed_anim_strip_10.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/buttom.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/strange_door_opening_anim_strip_14.png" type="Texture" id=12]
+[ext_resource path="res://Scenes/SwingingTrap.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/SpikeTrap.tscn" type="PackedScene" id=14]
 
 [sub_resource type="TileSet" id=77]
 0/name = "tileset.png 0"
@@ -1281,7 +1283,7 @@ position = Vector2( 201, 175 )
 position = Vector2( 63, 9 )
 
 [node name="Button" parent="DoorAndSwitch" index="1"]
-position = Vector2( -48, 31 )
+position = Vector2( -142, 32 )
 
 [node name="WoodenPlatform" parent="." instance=ExtResource( 5 )]
 position = Vector2( 158, 78 )
@@ -1297,8 +1299,8 @@ position = Vector2( -5.5, -0.5 )
 position = Vector2( 526, 155 )
 
 [node name="WoodSlabMiddle" parent="WoodenPlatform2/StaticBody2D" index="0"]
-position = Vector2( -5.5, 0 )
-scale = Vector2( 1.9375, 1.625 )
+position = Vector2( -6.99998, 0 )
+scale = Vector2( 1.75, 1.625 )
 
 [node name="CollisionShape2D" parent="WoodenPlatform2/StaticBody2D" index="1"]
 position = Vector2( -5.5, -0.5 )
@@ -1307,18 +1309,18 @@ position = Vector2( -5.5, -0.5 )
 position = Vector2( 592, 155 )
 
 [node name="WoodSlabMiddle" parent="WoodenPlatform3/StaticBody2D" index="0"]
-position = Vector2( -5.5, 0 )
-scale = Vector2( 1.9375, 1.625 )
+position = Vector2( -6.99998, 0 )
+scale = Vector2( 1.75, 1.625 )
 
 [node name="CollisionShape2D" parent="WoodenPlatform3/StaticBody2D" index="1"]
-position = Vector2( -5.5, -0.5 )
+position = Vector2( -7.5, -0.5 )
 
 [node name="WoodenPlatform4" parent="." instance=ExtResource( 5 )]
 position = Vector2( 659, 156 )
 
 [node name="WoodSlabMiddle" parent="WoodenPlatform4/StaticBody2D" index="0"]
-position = Vector2( -5.5, 0 )
-scale = Vector2( 1.9375, 1.625 )
+position = Vector2( -6.5, 0 )
+scale = Vector2( 1.8125, 1.625 )
 
 [node name="CollisionShape2D" parent="WoodenPlatform4/StaticBody2D" index="1"]
 position = Vector2( -5.5, -0.5 )
@@ -1327,8 +1329,8 @@ position = Vector2( -5.5, -0.5 )
 position = Vector2( 727, 156 )
 
 [node name="WoodSlabMiddle" parent="WoodenPlatform5/StaticBody2D" index="0"]
-position = Vector2( -5.5, 0 )
-scale = Vector2( 1.9375, 1.625 )
+position = Vector2( -7.00001, 0 )
+scale = Vector2( 1.75, 1.625 )
 
 [node name="CollisionShape2D" parent="WoodenPlatform5/StaticBody2D" index="1"]
 position = Vector2( -5.5, -0.5 )
@@ -1367,6 +1369,100 @@ anims/DoorClosed = SubResource( 86 )
 anims/DoorOpen = SubResource( 87 )
 anims/RESET = SubResource( 88 )
 
+[node name="SwingingTrap" parent="." instance=ExtResource( 13 )]
+position = Vector2( 286, 30 )
+
+[node name="SwingingTrap2" parent="." instance=ExtResource( 13 )]
+position = Vector2( 792, 15 )
+
+[node name="TrapSuspended" parent="SwingingTrap2" index="0"]
+position = Vector2( 0, 9.5 )
+scale = Vector2( 1, 0.796875 )
+
+[node name="CollisionPolygon2D" parent="SwingingTrap2/Area2D" index="0"]
+position = Vector2( 0, -0.796876 )
+scale = Vector2( 1, 0.703125 )
+
+[node name="SpikeTrap" parent="." instance=ExtResource( 14 )]
+position = Vector2( 201, 200 )
+rotation = -3.14159
+
+[node name="SpikeTrap2" parent="." instance=ExtResource( 14 )]
+position = Vector2( 218, 200 )
+rotation = -3.14159
+
+[node name="SpikeTrap3" parent="." instance=ExtResource( 14 )]
+position = Vector2( 153, 200 )
+rotation = 3.14159
+
+[node name="SpikeTrap4" parent="." instance=ExtResource( 14 )]
+position = Vector2( 134, 200 )
+rotation = 3.14159
+
+[node name="SpikeTrap5" parent="." instance=ExtResource( 14 )]
+position = Vector2( 114, 200 )
+rotation = 3.14159
+
+[node name="SpikeTrap6" parent="." instance=ExtResource( 14 )]
+position = Vector2( 505, 184 )
+rotation = -3.14159
+
+[node name="SpikeTrap7" parent="." instance=ExtResource( 14 )]
+position = Vector2( 521, 184 )
+rotation = -3.14159
+
+[node name="SpikeTrap8" parent="." instance=ExtResource( 14 )]
+position = Vector2( 537, 184 )
+rotation = -3.14159
+
+[node name="SpikeTrap9" parent="." instance=ExtResource( 14 )]
+position = Vector2( 553, 184 )
+rotation = -3.14159
+
+[node name="SpikeTrap10" parent="." instance=ExtResource( 14 )]
+position = Vector2( 569, 184 )
+rotation = -3.14159
+
+[node name="SpikeTrap11" parent="." instance=ExtResource( 14 )]
+position = Vector2( 613, 184 )
+rotation = -3.14159
+
+[node name="SpikeTrap12" parent="." instance=ExtResource( 14 )]
+position = Vector2( 629, 184 )
+rotation = -3.14159
+
+[node name="SpikeTrap13" parent="." instance=ExtResource( 14 )]
+position = Vector2( 645, 184 )
+rotation = -3.14159
+
+[node name="SpikeTrap14" parent="." instance=ExtResource( 14 )]
+position = Vector2( 662, 184 )
+rotation = -3.14159
+
+[node name="SpikeTrap15" parent="." instance=ExtResource( 14 )]
+position = Vector2( 678, 184 )
+rotation = -3.14159
+
+[node name="SpikeTrap16" parent="." instance=ExtResource( 14 )]
+position = Vector2( 714, 184 )
+rotation = -3.14159
+
+[node name="SpikeTrap17" parent="." instance=ExtResource( 14 )]
+position = Vector2( 730, 184 )
+rotation = -3.14159
+
+[node name="SpikeTrap18" parent="." instance=ExtResource( 14 )]
+position = Vector2( 746, 184 )
+rotation = -3.14159
+
+[node name="SpikeTrap19" parent="." instance=ExtResource( 14 )]
+position = Vector2( 762, 184 )
+rotation = -3.14159
+
+[node name="SpikeTrap20" parent="." instance=ExtResource( 14 )]
+position = Vector2( 778, 184 )
+rotation = -3.14159
+
 [editable path="DoorAndSwitch"]
 [editable path="WoodenPlatform"]
 [editable path="WoodenPlatform2"]
@@ -1375,3 +1471,4 @@ anims/RESET = SubResource( 88 )
 [editable path="WoodenPlatform5"]
 [editable path="DoorAndSwitch2"]
 [editable path="DoorAndSwitch3"]
+[editable path="SwingingTrap2"]
