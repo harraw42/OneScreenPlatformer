@@ -74,3 +74,8 @@ func _physics_process(delta):
 	
 	velocity.y += gravity * delta
 	velocity = move_and_slide(velocity, Vector2.UP)
+	
+	#for index in get_slide_count():
+		#var collision = get_slide_collision(index)
+		#if collision.collider is MoveableStone:
+			#collision.collider.slide(-collision.normal * (speed / 2))

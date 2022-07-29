@@ -1,5 +1,5 @@
 extends KinematicBody2D
-class_name PushStone
+class_name MoveableStone
 
 export var gravity = 100
 
