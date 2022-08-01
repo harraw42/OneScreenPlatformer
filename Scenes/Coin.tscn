@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Sprites/8x8 Dungeon tilemap by PH/Itch Package/Coin/coin1.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/coin_anim_strip_6.png" type="Texture" id=1]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimationPlayer:root_node")
+tracks/0/path = NodePath("..:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -14,13 +14,25 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ NodePath("..") ]
+"values": [ 1 ]
 }
 
 [sub_resource type="Animation" id=2]
 resource_name = "Spin"
-length = 0.4
+length = 0.6
 loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("..:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 0 ]
+}
 
 [sub_resource type="CircleShape2D" id=3]
 radius = 3.16228
@@ -31,6 +43,8 @@ radius = 3.16228
 
 [node name="Sprite" type="Sprite" parent="KinematicBody2D"]
 texture = ExtResource( 1 )
+hframes = 6
+frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D/Sprite"]
 root_node = NodePath(".")

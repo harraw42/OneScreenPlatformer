@@ -8,22 +8,6 @@
 
 config_version=4
 
-_global_script_classes=[ {
-"base": "KinematicBody2D",
-"class": "MoveableStone",
-"language": "GDScript",
-"path": "res://Scripts/MoveableStone.gd"
-}, {
-"base": "KinematicBody2D",
-"class": "PushStone",
-"language": "GDScript",
-"path": "res://Scripts/PushStone.gd"
-} ]
-_global_script_class_icons={
-"MoveableStone": "",
-"PushStone": ""
-}
-
 [application]
 
 config/name="Godot One Screen Platformer"
