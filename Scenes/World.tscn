@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=2]
+[gd_scene load_steps=107 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/Enjl-Starry Space Background/Enjl-Starry Space Background/preview.png" type="Texture" id=2]
@@ -14,8 +14,9 @@
 [ext_resource path="res://Sprites/strange_door_opening_anim_strip_14.png" type="Texture" id=12]
 [ext_resource path="res://Scenes/SwingingTrap.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/SpikeTrap.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Scenes/PushStone.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Coin.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Sprites/BitPap.ttf" type="DynamicFontData" id=16]
+[ext_resource path="res://GameStats.gd" type="Script" id=17]
 
 [sub_resource type="TileSet" id=77]
 0/name = "tileset.png 0"
@@ -1214,10 +1215,11 @@ tracks/4/keys = {
 }
 
 [sub_resource type="DynamicFont" id=89]
-size = 22
+size = 41
 font_data = ExtResource( 16 )
 
 [node name="World" type="Node2D"]
+script = ExtResource( 17 )
 
 [node name="Background1" type="TileMap" parent="."]
 tile_set = SubResource( 77 )
@@ -1494,12 +1496,14 @@ rotation = -3.14159
 [node name="Control" type="Control" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = -4.0
+margin_bottom = -4.0
 
 [node name="Label" type="Label" parent="CanvasLayer/Control"]
-margin_left = 1191.0
+margin_left = 1140.0
 margin_top = 14.0
-margin_right = 1263.0
-margin_bottom = 37.0
+margin_right = 1268.0
+margin_bottom = 56.0
 custom_fonts/font = SubResource( 89 )
 text = "00:00:00"
 
