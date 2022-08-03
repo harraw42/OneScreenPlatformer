@@ -145,3 +145,5 @@ anims/Saving = SubResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 2 )
 shape = SubResource( 3 )
+
+[connection signal="body_entered" from="." to="." method="_on_SavePoint_body_entered"]
