@@ -7,6 +7,8 @@ export(String) var dir = ""
 var reload = 1.2
 var timer = false
 
+const TYPE = "dart_trap"
+
 func _ready():
 	if dir == "right":
 		self.rotation_degrees = 0

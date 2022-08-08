@@ -9,16 +9,26 @@
 rotation = 1.5708
 script = ExtResource( 2 )
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+disabled = true
+
+[node name="ray" type="RayCast2D" parent="."]
 position = Vector2( 0, -0.5 )
 rotation = -1.5708
 cast_to = Vector2( 0, 1 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
-disabled = true
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 308, 186, 7, 21 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+disabled = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_Area2D_body_shape_entered"]
+[connection signal="tree_entered" from="CollisionShape2D" to="." method="_on_CollisionShape2D_tree_entered"]

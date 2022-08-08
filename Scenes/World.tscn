@@ -1,4 +1,4 @@
-[gd_scene load_steps=125 format=2]
+[gd_scene load_steps=126 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/Enjl-Starry Space Background/Enjl-Starry Space Background/preview.png" type="Texture" id=2]
@@ -26,6 +26,7 @@
 [ext_resource path="res://Props/drygrass_props.png" type="Texture" id=24]
 [ext_resource path="res://Props/bigflowers_props.png" type="Texture" id=25]
 [ext_resource path="res://Sprites/tile.EdenPlatforms.png" type="Texture" id=26]
+[ext_resource path="res://Scenes/dart trap.tscn" type="PackedScene" id=27]
 
 [sub_resource type="TileSet" id=77]
 0/name = "tileset.png 0"
@@ -1826,6 +1827,10 @@ tile_set = SubResource( 98 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 393228, 0, 2, 1179668, 0, 2, 1245203, 0, 2, 1245204, 0, 2, 1507334, 0, 2, 1507335, 0, 2, 1572869, 0, 2, 1572870, 0, 2, 1572871, 0, 2, 1572892, 0, 2, 1572893, 0, 2 )
+
+[node name="dart trap" parent="." instance=ExtResource( 27 )]
+position = Vector2( 387, 38 )
+dir = "right"
 
 [editable path="SavePoint4"]
 [editable path="DoorAndSwitch"]
