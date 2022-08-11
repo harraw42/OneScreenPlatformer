@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Sprites/trap_spikes_anim_strip_7.png" type="Texture" id=1]
-[ext_resource path="res://Scenes/SpikeTrap.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8.97779 )
@@ -62,22 +61,20 @@ tracks/1/keys = {
 "values": [ 1, 2, 3, 4, 3, 2, 5, 6, 1, 1, 2, 3, 4, 3, 2, 5, 6, 1 ]
 }
 
-[node name="SpikeTrap" type="Node2D"]
-script = ExtResource( 2 )
+[node name="SpikeTrap" type="Node2D" groups=["Deadly"]]
 
-[node name="TrapSpikesAnimStrip7" type="Sprite" parent="."]
+[node name="TrapSpikesAnimStrip7" type="Sprite" parent="." groups=["Deadly"]]
 texture = ExtResource( 1 )
 hframes = 7
 frame = 1
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["Deadly"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["Deadly"]]
 shape = SubResource( 1 )
 disabled = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." groups=["Deadly"]]
+autoplay = "SpikeTrigger"
 anims/RESET = SubResource( 2 )
 anims/SpikeTrigger = SubResource( 3 )
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

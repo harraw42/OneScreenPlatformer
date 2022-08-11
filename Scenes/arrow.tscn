@@ -4,31 +4,23 @@
 [ext_resource path="res://Scenes/arrow.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 11.5, 2.5 )
 
-[node name="arrow" type="KinematicBody2D"]
-rotation = 1.5708
+[node name="Area2D" type="Area2D" groups=["Deadly"]]
 script = ExtResource( 2 )
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="ray" type="RayCast2D" parent="." groups=["Deadly"]]
+position = Vector2( 0.5, 1.81e-06 )
+cast_to = Vector2( 0.5, 9 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 1 )
-disabled = true
-
-[node name="ray" type="RayCast2D" parent="."]
-position = Vector2( 0, -0.5 )
-rotation = -1.5708
-cast_to = Vector2( 0, 1 )
-
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite" type="Sprite" parent="." groups=["Deadly"]]
+rotation = 1.5708
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 308, 186, 7, 21 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.5, -0.5 )
 shape = SubResource( 1 )
-disabled = true
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
-[connection signal="body_shape_entered" from="Area2D" to="." method="_on_Area2D_body_shape_entered"]
-[connection signal="tree_entered" from="CollisionShape2D" to="." method="_on_CollisionShape2D_tree_entered"]
+[connection signal="body_entered" from="." to="." method="_on_Area2D_body_entered"]
