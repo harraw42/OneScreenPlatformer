@@ -2,6 +2,7 @@ extends Node
 
 onready var game_start_time = OS.get_ticks_msec()
 var current_spawn = null
+var coin_number = 0
 
 func reset():
 	current_spawn = null
@@ -31,9 +32,9 @@ func get_time():
 	var seconds = current_time/1000%60
 	var msec = current_time%1000/10
 	if minutes < 10:
-		minutes = "0"+str(minutes)
+			minutes = "0"+str(minutes)
 	if seconds < 10:
-		seconds = "0"+str(seconds)
+			seconds = "0"+str(seconds)
 	if msec < 10:
 		if msec == 0:
 			msec = "00"
