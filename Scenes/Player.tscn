@@ -164,7 +164,7 @@ anims/RESET = SubResource( 7 )
 anims/Roll = SubResource( 9 )
 anims/Running = SubResource( 8 )
 
-[node name="DeathZone" type="Area2D" parent="."]
+[node name="DeathZone" type="Area2D" parent="." groups=["Player"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
 position = Vector2( 0, 1 )

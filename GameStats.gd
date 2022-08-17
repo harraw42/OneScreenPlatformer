@@ -25,6 +25,7 @@ func _process(delta):
 	pass
 	if Input.is_action_just_pressed("reset"):
 		GameStats.reset()
+		
 
 func get_time():
 	var current_time = OS.get_ticks_msec() - game_start_time
