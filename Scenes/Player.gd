@@ -55,7 +55,7 @@ func get_input():
 
 func _physics_process(delta):
 	get_input()
-	print(is_on_floor())
+
 	if velocity == Vector2.ZERO:
 		player_state = state.IDLE
 	if Input.get_action_strength('jump') and is_on_floor():

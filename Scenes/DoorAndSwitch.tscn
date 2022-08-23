@@ -251,7 +251,7 @@ position = Vector2( 34, -24 )
 position = Vector2( -34, 22 )
 shape = SubResource( 3 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="DoorAnimationPlayer" type="AnimationPlayer" parent="."]
 anims/ButtonDown = SubResource( 4 )
 anims/ButtonUp = SubResource( 5 )
 anims/DoorClosed = SubResource( 6 )
