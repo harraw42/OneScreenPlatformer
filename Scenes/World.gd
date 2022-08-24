@@ -12,3 +12,6 @@ func _process(delta):
 	$CanvasLayer/Control/Label.text = GameStats.get_time()
 	#$CoinCounter/Control/Label.text = coin_number
 	$CoinCounter/Control/Label.text = str(GameStats.coin_number)
+
+func _on_OptionsButton_pressed():
+	get_tree().change_scene("res://Scenes/Menu.tscn")
