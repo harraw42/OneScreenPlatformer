@@ -13,31 +13,36 @@ export (float) var acceleration = 25
 enum state {IDLE, JUMPING, STARTJUMP, FALLING, ATTACKING, RUNNING, ROLLING, PUSHING}
 # player default animation
 onready var player_state = state.IDLE
+onready var state_machine = $AnimationTree.get("parameters/playback")
 
 func _ready():
-	$AnimationPlayer.play("Idle Animation")
+	state_machine.travel("Idle Animation")
+	$Slash.hide()
 
  #changing anim
 func update_animation(anim):
 	if velocity.x < 0:
 		$Sprite.flip_h = true
+		$Slash.flip_h = true
 	elif velocity.x > 0:
 		$Sprite.flip_h = false
+		$Slash.flip_h = false
 	match(anim):
 		state.RUNNING:
-			$AnimationPlayer.play("Running")
+			state_machine.travel("Running")
 		state.JUMPING:
-			$AnimationPlayer.play("Jumping")
+			state_machine.travel("Jumping")
 		state.FALLING:
-			$AnimationPlayer.play("Fall")
+			state_machine.travel("Fall")
 		state.ATTACKING:
-			$AnimationPlayer.play("Attacking")
+			state_machine.travel("Attacking")
 		state.IDLE:
-			$AnimationPlayer.play("Idle Animation")
+			state_machine.travel("Idle Animation")
+			$Slash.hide()
 		state.PUSHING:
-			$AnimationPlayer.play("Pushing")
+			state_machine.travel("Pushing")
 		state.ROLLING:
-			$AnimationPlayer.play("Roll")
+			state_machine.travel("Roll")
 	pass
 	
 func handle_state(player_state):
@@ -70,7 +75,9 @@ func _physics_process(delta):
 			player_state = state.FALLING
 	
 	if Input.is_action_pressed("attack"):
-		$AnimationPlayer.play("Attacking")
+		player_state = state.ATTACKING
+		$Slash.show()
+		$Slash/SlashAnimation.play("Slash")
 	
 	handle_state(player_state)
 	update_animation(player_state)

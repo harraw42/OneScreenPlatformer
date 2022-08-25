@@ -62,7 +62,8 @@ custom_fonts/font = SubResource( 2 )
 text = "Walk Left: 
 Walk Right: 
 Jump: 
-Attack: "
+Attack: 
+Zoom In / Out:"
 
 [node name="Label3" type="Label" parent="CanvasLayer/Control"]
 margin_left = 480.0
@@ -73,7 +74,8 @@ custom_fonts/font = SubResource( 3 )
 text = "A
 D
 Space
-Mouse 1"
+Mouse 1
+Z"
 
 [node name="Label" type="Label" parent="CanvasLayer/Control"]
 margin_left = 254.0
