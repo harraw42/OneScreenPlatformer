@@ -1,10 +1,10 @@
 extends Node2D
 
-
 var coin_number
 
 func _ready():
-	pass 
+	$CanvasLayer/Control/Resume/ResumeButton.hide()
+	$CanvasLayer/Control/Quit/QuitButton.hide()
 
 func _process(delta):
 	if Input.is_action_pressed("reset"):
@@ -14,4 +14,17 @@ func _process(delta):
 	$CoinCounter/Control/Label.text = str(GameStats.coin_number)
 
 func _on_OptionsButton_pressed():
+	$CanvasLayer/Control/Resume/ResumeButton.show()
+	$CanvasLayer/Control/Quit/QuitButton.show()
+	get_tree().paused = true
+
+
+func _on_ResumeButton_pressed():
+	$CanvasLayer/Control/Resume/ResumeButton.hide()
+	$CanvasLayer/Control/Quit/QuitButton.hide()
+	get_tree().paused = false
+
+
+func _on_QuitButton_pressed():
 	get_tree().change_scene("res://Scenes/Menu.tscn")
+	get_tree().paused = false

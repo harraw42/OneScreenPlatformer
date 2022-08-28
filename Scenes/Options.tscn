@@ -63,6 +63,7 @@ text = "Walk Left:
 Walk Right: 
 Jump: 
 Attack: 
+Roll:
 Zoom In / Out:"
 
 [node name="Label3" type="Label" parent="CanvasLayer/Control"]
@@ -75,6 +76,7 @@ text = "A
 D
 Space
 Mouse 1
+Mouse 2
 Z"
 
 [node name="Label" type="Label" parent="CanvasLayer/Control"]

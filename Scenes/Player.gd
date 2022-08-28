@@ -4,7 +4,7 @@ export (int) var speed = 120
 export (int) var jump_speed = -180
 export (int) var gravity = 400
 export (int) var slide_speed = 400
-
+export (int) var sword_pos = 12
 var velocity = Vector2.ZERO
 
 export (float) var friction = 10
@@ -24,9 +24,11 @@ func update_animation(anim):
 	if velocity.x < 0:
 		$Sprite.flip_h = true
 		$Slash.flip_h = true
+		$Slash.position.x = -sword_pos
 	elif velocity.x > 0:
 		$Sprite.flip_h = false
 		$Slash.flip_h = false
+		$Slash.position.x = sword_pos
 	match(anim):
 		state.RUNNING:
 			state_machine.travel("Running")
@@ -38,7 +40,7 @@ func update_animation(anim):
 			state_machine.travel("Attacking")
 		state.IDLE:
 			state_machine.travel("Idle Animation")
-			$Slash.hide()
+			
 		state.PUSHING:
 			state_machine.travel("Pushing")
 		state.ROLLING:
@@ -79,6 +81,9 @@ func _physics_process(delta):
 		$Slash.show()
 		$Slash/SlashAnimation.play("Slash")
 	
+	if Input.is_action_just_pressed("roll"):
+		player_state = state.ROLLING
+	
 	handle_state(player_state)
 	update_animation(player_state)
 	
@@ -91,3 +96,7 @@ func _on_DeathZone_area_entered(area):
 		if GameStats.check_reset() == false:
 			global_position = GameStats.get_spawn().global_position
 
+
+
+func _on_SlashAnimation_animation_finished(anim_name):
+	$Slash.hide()
