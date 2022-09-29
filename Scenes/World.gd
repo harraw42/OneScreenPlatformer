@@ -28,3 +28,4 @@ func _on_ResumeButton_pressed():
 func _on_QuitButton_pressed():
 	get_tree().change_scene("res://Scenes/Menu.tscn")
 	get_tree().paused = false
+	SoundEffects.change_track("title_screen")

@@ -32,3 +32,7 @@ func _on_Area2D_area_entered(area):
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("Wall"):
 		queue_free() 
+	if body.is_in_group("Destruction"):
+		queue_free()
+
+

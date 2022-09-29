@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/onlymp3.to - Rock Background Music - No Copyright-fh-o8Bxc3Ys-192k-1659596016191.mp3-9ca02b2c94e2216fcc15b9a6a3baf054.mp3str"
+
+[deps]
+
+source_file="res://Sounds/onlymp3.to - Rock Background Music - No Copyright-fh-o8Bxc3Ys-192k-1659596016191.mp3"
+dest_files=[ "res://.import/onlymp3.to - Rock Background Music - No Copyright-fh-o8Bxc3Ys-192k-1659596016191.mp3-9ca02b2c94e2216fcc15b9a6a3baf054.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

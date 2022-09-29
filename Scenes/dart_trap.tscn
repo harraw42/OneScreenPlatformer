@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4, 6 )
 
-[node name="dart_trap" type="KinematicBody2D" groups=["Deadly"]]
+[node name="dart_trap" type="KinematicBody2D" groups=["Arrow", "Deadly"]]
 script = ExtResource( 1 )
 
 [node name="Dungeontileset-extended" type="Sprite" parent="." groups=["Deadly"]]

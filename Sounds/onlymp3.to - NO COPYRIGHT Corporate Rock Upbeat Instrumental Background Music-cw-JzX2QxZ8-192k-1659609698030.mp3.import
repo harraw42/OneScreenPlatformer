@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/onlymp3.to - NO COPYRIGHT Corporate Rock Upbeat Instrumental Background Music-cw-JzX2QxZ8-192k-1659609698030.mp3-2525e9fdbb24a2aa838a3619960c3ffe.mp3str"
+
+[deps]
+
+source_file="res://Sounds/onlymp3.to - NO COPYRIGHT Corporate Rock Upbeat Instrumental Background Music-cw-JzX2QxZ8-192k-1659609698030.mp3"
+dest_files=[ "res://.import/onlymp3.to - NO COPYRIGHT Corporate Rock Upbeat Instrumental Background Music-cw-JzX2QxZ8-192k-1659609698030.mp3-2525e9fdbb24a2aa838a3619960c3ffe.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

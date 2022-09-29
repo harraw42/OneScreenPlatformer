@@ -7,6 +7,9 @@ export (int) var slide_speed = 400
 export (int) var sword_pos = 12
 var velocity = Vector2.ZERO
 
+var jump_max = 2
+var jump_count = 0
+
 export (float) var friction = 10
 export (float) var acceleration = 25
 
@@ -40,7 +43,6 @@ func update_animation(anim):
 			state_machine.travel("Attacking")
 		state.IDLE:
 			state_machine.travel("Idle Animation")
-			
 		state.PUSHING:
 			state_machine.travel("Pushing")
 		state.ROLLING:
@@ -51,6 +53,7 @@ func handle_state(player_state):
 	match(player_state):
 		state.STARTJUMP:
 			velocity.y = jump_speed
+			SoundEffects.play_sound_effects("jump")
 	pass
 	
 func get_input():
@@ -77,11 +80,13 @@ func _physics_process(delta):
 			player_state = state.FALLING
 	
 	if Input.is_action_pressed("attack"):
+		SoundEffects.play_sound_effects("attack")
 		player_state = state.ATTACKING
 		$Slash.show()
 		$Slash/SlashAnimation.play("Slash")
 	
 	if Input.is_action_just_pressed("roll"):
+		SoundEffects.play_sound_effects("roll")
 		player_state = state.ROLLING
 	
 	handle_state(player_state)
@@ -92,11 +97,10 @@ func _physics_process(delta):
 	
 
 func _on_DeathZone_area_entered(area):
+	SoundEffects.play_sound_effects("dead")
 	if area.is_in_group("Deadly"):
 		if GameStats.check_reset() == false:
 			global_position = GameStats.get_spawn().global_position
-
-
 
 func _on_SlashAnimation_animation_finished(anim_name):
 	$Slash.hide()

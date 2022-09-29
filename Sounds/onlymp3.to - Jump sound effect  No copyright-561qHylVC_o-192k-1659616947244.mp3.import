@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/onlymp3.to - Jump sound effect  No copyright-561qHylVC_o-192k-1659616947244.mp3-e3fa6e04165f011e86c2b109f0eaad80.mp3str"
+
+[deps]
+
+source_file="res://Sounds/onlymp3.to - Jump sound effect  No copyright-561qHylVC_o-192k-1659616947244.mp3"
+dest_files=[ "res://.import/onlymp3.to - Jump sound effect  No copyright-561qHylVC_o-192k-1659616947244.mp3-e3fa6e04165f011e86c2b109f0eaad80.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
