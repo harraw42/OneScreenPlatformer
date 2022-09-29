@@ -2027,10 +2027,13 @@ position = Vector2( 398, 182 )
 position = Vector2( 81, 54 )
 
 [node name="SavePoint3" parent="SavePoints" instance=ExtResource( 18 )]
-position = Vector2( 943, 39 )
+position = Vector2( 943, 38 )
 
 [node name="SavePoint4" parent="SavePoints" instance=ExtResource( 18 )]
 position = Vector2( 866, 327 )
+
+[node name="CollisionShape2D" parent="SavePoints/SavePoint4" index="2"]
+position = Vector2( 0, 1 )
 
 [node name="SavePoint5" parent="SavePoints" instance=ExtResource( 18 )]
 position = Vector2( 585, 471 )
@@ -2047,7 +2050,7 @@ anims/Saving = SubResource( 113 )
 position = Vector2( 94, 582 )
 
 [node name="SavePoint7" parent="SavePoints" instance=ExtResource( 18 )]
-position = Vector2( 734, 677 )
+position = Vector2( 734, 678 )
 
 [node name="SavePoint8" parent="SavePoints" instance=ExtResource( 18 )]
 position = Vector2( 1158, 678 )
@@ -2339,6 +2342,7 @@ custom_fonts/font = SubResource( 114 )
 text = "Coins Collected:"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 anchor_right = 1.0
